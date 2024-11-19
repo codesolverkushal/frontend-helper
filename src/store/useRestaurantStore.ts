@@ -3,7 +3,7 @@ import { toast } from 'sonner';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { Orders } from './useOrderStore';
-
+import {server} from "../contants/config";
 export type MenuItem = {
     _id: string;
     name: string;
@@ -52,7 +52,7 @@ interface RestaurantStore {
 
 
 
-const API_END_POINT = "http://localhost:8000/api/v1/restaurant";
+const API_END_POINT = `${server}/api/v1/restaurant`;
 axios.defaults.withCredentials = true;
 
 export const useRestaurantStore = create<RestaurantStore>()(

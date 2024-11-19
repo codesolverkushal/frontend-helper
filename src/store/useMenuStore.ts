@@ -3,9 +3,10 @@ import { toast } from "sonner";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { useRestaurantStore } from "./useRestaurantStore";
+import {server} from '../contants/config';
 
 
-const API_END_POINT = "http://localhost:8000/api/v1/menu";
+const API_END_POINT = `${server}/api/v1/menu`;
 axios.defaults.withCredentials = true;
 
 type MenuState = {
