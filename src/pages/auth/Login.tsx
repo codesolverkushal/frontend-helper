@@ -8,9 +8,9 @@ import { LoginInputState, userLoginSchema } from "@/schema/userSchema";
 import useUserStore from "@/store/useUserStore";
 
 // Typescript me type define krne ka 2 tarika 
-
+import {server} from "../../contants/config";
 const Login = () => {
-
+  console.log(server);
     const [input,setInput] = useState<LoginInputState>({
         email:"",
         password:""
@@ -21,7 +21,7 @@ const Login = () => {
     const [errors,setErrors] = useState<Partial<LoginInputState>>({});
 
     const {loading,login} = useUserStore();
-    console.log(loading);
+   
 
     const changeEventHandler = (e: ChangeEvent<HTMLInputElement>) =>{
         e.preventDefault();
